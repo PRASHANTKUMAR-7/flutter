@@ -1,0 +1,76 @@
+## 1️⃣ Required Positional Parameters
+```dart
+void volumeRequired(double length, double breadth, double height) {
+  print(length * breadth * height);
+}
+
+void main() {
+  volumeRequired(5, 3, 2);
+}
+```
+
+---
+
+## 2️⃣ Optional Positional Parameters
+```dart
+void volumeOptionalPositional(double length, double breadth, [double? height]) {
+  print(length * breadth * (height ?? 1));
+}
+
+void main() {
+  volumeOptionalPositional(5, 3);
+}
+```
+
+---
+
+## 3️⃣ Named Parameters (Optional)
+```dart
+void volumeNamed({double? length, double? breadth, double? height}) {
+  print((length ?? 1) * (breadth ?? 1) * (height ?? 1));
+}
+
+void main() {
+  volumeNamed(length: 5, breadth: 3, height: 2);
+}
+```
+
+---
+
+## 4️⃣ Required Named Parameters
+```dart
+void volumeRequiredNamed({
+  required double length,
+  required double breadth,
+  required double height,
+}) {
+  print(length * breadth * height);
+}
+
+void main() {
+  volumeRequiredNamed(length: 5, breadth: 3, height: 2);
+}
+```
+
+---
+
+## 5️⃣ Default Parameters
+```dart
+void volumeDefault({double length = 1, double breadth = 1, double height = 1}) {
+  print(length * breadth * height);
+}
+
+void main() {
+  volumeDefault(length: 5, breadth: 3);
+}
+```
+
+---
+
+### 🧠 One-line Rule to Remember
+
+* `()` → required positional
+* `[]` → optional positional
+* `{}` → named
+* `required` → compulsory named
+* `=` → default value
