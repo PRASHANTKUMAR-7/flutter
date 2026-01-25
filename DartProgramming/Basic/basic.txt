@@ -1,0 +1,352 @@
+Dart: Zero → Hero Roadmap
+
+(Beginner → Solid Intermediate)
+
+PHASE 0 — What Dart Is (2 minutes)
+
+Dart is a statically typed, compiled language
+
+Used heavily for Flutter, but also:
+
+Backend (Dart Frog, Shelf)
+
+CLI tools
+
+Web (compiled to JS)
+
+Think of Dart as:
+
+JavaScript syntax + Java-like discipline + modern language features
+
+PHASE 1 — Absolute Basics (Syntax Foundation)
+1. Hello World
+void main() {
+  print('Hello, Dart!');
+}
+
+
+main() → entry point
+
+print() → console output
+
+2. Variables (VERY IMPORTANT)
+var (type inferred)
+var name = 'Dart';
+
+
+Type is fixed after first assignment
+
+You cannot change it later
+
+name = 10; // ❌ error
+
+final (runtime constant)
+final age = 21;
+
+
+Value set once
+
+Decided at runtime
+
+const (compile-time constant)
+const pi = 3.14;
+
+
+Value known at compile time
+
+Faster & safer
+
+Rule of thumb
+
+Prefer final
+
+Use const when value is truly constant
+
+3. Built-in Data Types
+int a = 10;
+double b = 3.5;
+String c = 'Hello';
+bool d = true;
+
+Collections
+List<int> nums = [1, 2, 3];
+Set<int> unique = {1, 2, 3};
+Map<String, int> marks = {'math': 90};
+
+PHASE 2 — Control Flow (Decision Making)
+4. If–Else
+if (age >= 18) {
+  print('Adult');
+} else {
+  print('Minor');
+}
+
+5. Loops
+For loop
+for (int i = 0; i < 5; i++) {
+  print(i);
+}
+
+For-in (very common)
+for (var n in nums) {
+  print(n);
+}
+
+While
+while (count < 5) {
+  count++;
+}
+
+PHASE 3 — Functions (Core Skill)
+6. Basic Function
+int add(int a, int b) {
+  return a + b;
+}
+
+7. Arrow Function (one-liner)
+int add(int a, int b) => a + b;
+
+8. Named Parameters (Dart Superpower)
+void greet({required String name, int age = 0}) {
+  print('Hello $name, age $age');
+}
+
+
+Call it like this:
+
+greet(name: 'Prashant', age: 22);
+
+
+Why this matters:
+
+Readable
+
+No confusion
+
+Perfect for APIs & Flutter widgets
+
+PHASE 4 — 🔥 Sound Null Safety (MOST IMPORTANT)
+
+This is where beginners struggle.
+
+9. Null Safety Basics
+Nullable vs Non-nullable
+String name = 'Dart';     // cannot be null
+String? nickname;        // can be null
+
+10. Null Check (?)
+print(nickname?.length);
+
+
+Safe access
+
+Returns null instead of crashing
+
+11. Force unwrap (!) — use carefully
+print(nickname!.length);
+
+
+Only use when you are 100% sure it’s not null.
+
+12. late keyword
+late String token;
+
+void init() {
+  token = 'abc123';
+}
+
+
+Promises Dart you’ll initialize it before use
+
+Useful for dependency injection
+
+13. Null-aware operators
+String name = nickname ?? 'Guest';
+
+
+If nickname is null → 'Guest'
+
+PHASE 5 — Classes & OOP (Real Programs)
+14. Simple Class
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  void intro() {
+    print('I am $name');
+  }
+}
+
+
+Usage:
+
+var p = Person('Alex', 20);
+p.intro();
+
+15. Named Constructors
+class User {
+  String name;
+
+  User(this.name);
+  User.guest() : name = 'Guest';
+}
+
+16. Getters & Setters
+class Box {
+  double _width = 0;
+
+  double get width => _width;
+  set width(double w) => _width = w;
+}
+
+
+_ → private to file
+
+PHASE 6 — Collections & Iteration (Daily Use)
+17. List Operations
+nums.add(4);
+nums.remove(2);
+
+18. Map Operations
+marks['science'] = 95;
+print(marks['math']);
+
+19. Functional Methods (VERY USEFUL)
+nums
+  .where((n) => n > 2)
+  .map((n) => n * 2)
+  .forEach(print);
+
+
+Learn these well:
+
+map
+
+where
+
+reduce
+
+forEach
+
+PHASE 7 — Async & Futures (Real World)
+20. Future
+Future<String> fetchData() async {
+  await Future.delayed(Duration(seconds: 2));
+  return 'Done';
+}
+
+21. Using async / await
+void main() async {
+  var data = await fetchData();
+  print(data);
+}
+
+
+Rule:
+
+If you use await, the function must be async
+
+PHASE 8 — Error Handling
+22. Try–Catch
+try {
+  int x = int.parse('abc');
+} catch (e) {
+  print('Error: $e');
+}
+
+23. Custom Exception
+class InvalidAge implements Exception {
+  final String message;
+  InvalidAge(this.message);
+}
+
+PHASE 9 — Files, Packages & Tooling
+24. Pub (Dart Package Manager)
+dart pub add http
+
+25. Importing Packages
+import 'package:http/http.dart' as http;
+
+PHASE 10 — Intermediate Dart Concepts
+26. Enums
+enum Status { loading, success, error }
+
+27. Mixins
+mixin Logger {
+  void log(String msg) => print(msg);
+}
+
+
+Use when:
+
+You want shared behavior
+
+Without inheritance
+
+28. Abstract Classes
+abstract class Animal {
+  void sound();
+}
+
+🚀 PRO TIPS & HIDDEN GEMS (The “Extra Edge”)
+🔹 Prefer Immutability
+final List<int> nums = [1, 2, 3];
+
+🔹 Use const Constructors
+class Point {
+  final int x, y;
+  const Point(this.x, this.y);
+}
+
+
+Huge performance boost in Flutter.
+
+🔹 Avoid dynamic
+dynamic x; // ❌ dangerous
+
+
+Use Object? instead.
+
+🔹 Lint Rules Matter
+
+Enable:
+
+avoid_print
+
+prefer_const_constructors
+
+always_use_package_imports
+
+🔹 Think in Types
+
+Dart rewards clear typing.
+
+If Dart complains → listen to it.
+
+FINAL LEARNING ORDER (Follow This)
+
+Variables + Null Safety
+
+Functions + Named Parameters
+
+Collections
+
+Classes
+
+Async / Await
+
+Error Handling
+
+Intermediate features
+
+✅ You’re “Intermediate” When You Can:
+
+Read Dart without fear
+
+Understand null-safety errors
+
+Write async code confidently
+
+Build CLI / Flutter / API logic
