@@ -1,0 +1,237 @@
+# 🚀 Project Creation & Setup
+```bash
+flutter create project_name
+```
+
+Create a new Flutter project.
+```bash
+flutter create .
+```
+
+Create project in current directory (use inside cloned repo).
+```bash
+flutter create --org com.example project_name
+```
+
+Set custom package/bundle ID.
+---
+
+# 📂 Navigation & Opening
+```bash
+cd project_name
+```
+```bash
+code .
+```
+
+Open project in VS Code.
+```bash
+flutter run
+```
+
+Run app on connected device/emulator.
+---
+
+# 🔍 Check Environment & Devices
+```bash
+flutter doctor
+```
+
+Check Flutter setup & missing dependencies.
+```bash
+flutter doctor -v
+```
+
+Detailed report.
+```bash
+flutter devices
+```
+
+List connected devices.
+```bash
+flutter emulators
+```
+
+List available emulators.
+```bash
+flutter emulators --launch emulator_id
+```
+
+Start emulator.
+---
+
+# ▶️ Run & Build Commands
+```bash
+flutter run
+```
+```bash
+flutter run -d chrome
+```
+
+Run on Chrome (Web).
+```bash
+flutter run -d windows
+```
+
+Run desktop app.
+```bash
+flutter run --release
+```
+
+Run in release mode.
+
+---
+
+# 📦 Build APK / App
+
+### Android APK
+```bash
+flutter build apk
+```
+
+```bash
+flutter build apk --release
+```
+
+### App Bundle (Play Store)
+```bash
+flutter build appbundle
+```
+
+### iOS
+```bash
+flutter build ios
+```
+
+### Web
+```bash
+flutter build web
+```
+
+---
+
+# 📚 Dependencies (pub)
+```bash
+flutter pub get
+```
+
+Install dependencies.
+```bash
+flutter pub upgrade
+```
+
+Update packages.
+```bash
+flutter pub add package_name
+```
+
+Add new package.
+Example:
+
+```bash
+flutter pub add http
+```
+```bash
+flutter pub remove package_name
+```
+
+---
+
+# 🧹 Clean & Fix Issues
+```bash
+flutter clean
+```
+
+Delete build cache.
+```bash
+flutter pub get
+```
+
+(Reinstall after clean)
+```bash
+flutter repair
+```
+
+Fix corrupted Flutter SDK.
+
+---
+
+# 🔄 Upgrade Flutter
+```bash
+flutter upgrade
+```
+```bash
+flutter channel stable
+```
+```bash
+flutter channel beta
+```
+
+---
+
+# 🧪 Testing
+```bash
+flutter test
+```
+```bash
+flutter drive
+```
+
+Run integration tests.
+
+---
+
+# 📊 Analyze & Format Code
+```bash
+flutter analyze
+```
+
+Static code analysis.
+```bash
+dart format .
+```
+
+Auto format code.
+
+---
+
+# 🌐 Enable Platforms
+```bash
+flutter config --enable-web
+flutter config --enable-windows-desktop
+flutter config --enable-linux-desktop
+flutter config --enable-macos-desktop
+```
+
+---
+
+# 🧰 Useful Dev Commands
+```bash
+flutter logs
+```
+
+Show runtime logs.
+```bash
+flutter attach
+```
+
+Attach to running app.
+```bash
+flutter screenshot
+```
+
+---
+
+# 🧭 Typical Daily Workflow
+```bash
+flutter doctor
+flutter pub get
+flutter run
+```
+
+If error:
+```bash
+flutter clean
+flutter pub get
+flutter run
+```
