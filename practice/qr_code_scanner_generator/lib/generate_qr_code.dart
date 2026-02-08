@@ -10,12 +10,18 @@ class GenerateQrCode extends StatefulWidget {
 
 class _GenerateQrCodeState extends State<GenerateQrCode> {
   TextEditingController urlController = TextEditingController();
+  // String qrData="";
 
-  @override
-  void dispose() {
-    urlController.dispose();   // ✅ Good practice
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   urlController.dispose();   // ✅ Good practice
+  //   super.dispose();
+  // }
+  // void generateQr() {
+  //   setState(() {
+  //     qrData = urlController.text;   // update only on button click
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +43,7 @@ class _GenerateQrCodeState extends State<GenerateQrCode> {
                     hintText: "Enter URL or Text",
                     border: OutlineInputBorder(),
                   ),
-                  onChanged: (value) {
-                    setState(() {});   // ✅ rebuild UI
-                  },
+
                 ),
               ),
 
@@ -53,17 +57,24 @@ class _GenerateQrCodeState extends State<GenerateQrCode> {
                 ),
 
               SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.only(left:10, right:10),
-                child:TextField(
-                  controller: urlController,
-                  decoration: InputDecoration(
-                    hintText: 'Enter Your Data'
-                  ),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.only(left:10, right:10),
+              //   child:TextField(
+              //     controller: urlController,
+              //     decoration: InputDecoration(
+              //       hintText: 'Enter Your Data'
+              //     ),
+              //   ),
+              // ),
               SizedBox(height:10,),
-              ElevatedButton(onPressed:(){}, child:Text('Generate QR Code')),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed:(){setState(() {
+                
+              });}, child:Text('Generate QR Code')),
             ],
           ),
       ),

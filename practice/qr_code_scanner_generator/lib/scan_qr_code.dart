@@ -18,7 +18,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
       setState(() {
         this.qrResult=qrCode.toString();
       });
-      
+
     }on PlatformException{
       qrResult='Fail to read QR code';
     }
@@ -34,7 +34,12 @@ class _ScanQrCodeState extends State<ScanQrCode> {
               SizedBox(height: 30,),
               Text('$qrResult',style: TextStyle(color: Colors.black)),
               SizedBox(height:30,),
-              ElevatedButton(onPressed: 
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: 
               scanQR, child:Text('Scan Code'))
             ],
           ),

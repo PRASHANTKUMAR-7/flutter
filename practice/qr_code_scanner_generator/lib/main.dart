@@ -36,13 +36,23 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed:(){
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed:(){
               setState(() {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanQrCode()));
               });
             }, child: Text('Scan Qr Code')),
             SizedBox(height: 40,),
-            ElevatedButton(onPressed: (){
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: (){
               setState(() {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>GenerateQrCode()));
               });
