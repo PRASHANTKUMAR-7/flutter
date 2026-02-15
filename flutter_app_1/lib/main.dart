@@ -24,7 +24,19 @@ class NewApp extends StatelessWidget {
           ],
           leading: CircleAvatar(child: Text("IW"),),
         ),
-        body: Text("Hello World"),
+        body: Center(
+          child: Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
+            width: 300,
+            height: 300,
+            decoration: BoxDecoration(
+              color: Colors.red[400],
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Text("Prashant Kumar", style: TextStyle(fontSize: 20),)
+          ),
+        )
       )
     );
   }
